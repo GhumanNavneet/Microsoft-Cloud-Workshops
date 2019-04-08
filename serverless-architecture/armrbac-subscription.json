@@ -1,0 +1,13 @@
+{
+  "Name": "Serverless Architecture sub level Role",
+  "Id": null,
+  "IsCustom": true,
+  "Description": "Custom Role for O365 Sign In over the scope of subscription.",
+  "Actions": [
+    "Microsoft.Web/connections/*"
+  ],
+  "NotActions": [
+  ],
+  "AssignableScopes": [
+  ]
+}
