@@ -1,0 +1,36 @@
+{
+  "Name": "oss paas jenkin RBAC",
+  "Id": null,
+  "IsCustom": true,
+  "Description": "Spektra Training Custom Role.",
+  "Actions": [
+    "Microsoft.Authorization/*/read",
+    "Microsoft.Resources/*",
+    "Microsoft.Resources/deployments/*",
+    "Microsoft.Compute/disks/*",
+    "Microsoft.Compute/*",
+    "Microsoft.Compute/virtualMachines/*",
+    "Microsoft.Compute/virtualMachines/extensions/*",
+    "Microsoft.ContainerRegistry/*",
+    "Microsoft.ContainerRegistry/registries/*",
+    "Microsoft.DocumentDb/*",
+    "Microsoft.DocumentDb/databaseAccounts/*",
+    "Microsoft.Logic/*",
+    "Microsoft.Logic/workflows/*",
+    "Microsoft.Network/*",
+    "Microsoft.Network/networkInterfaces/*",
+    "Microsoft.Network/networkSecurityGroups/*",
+    "Microsoft.Network/publicIPAddresses/*",
+    "Microsoft.Network/virtualNetworks/*",
+    "Microsoft.Storage/*",
+    "Microsoft.Storage/storageAccounts/*",
+    "Microsoft.Web/*",
+    "Microsoft.Web/connections/*",
+    "Microsoft.Web/serverFarms/*",
+    "Microsoft.Web/sites/*"
+
+  ],
+  "NotActions": [
+
+  ]
+}
