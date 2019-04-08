@@ -1,0 +1,77 @@
+{  
+   "if":{  
+      "anyOf":[  
+         {  
+            "not":{  
+               "anyOf":[  
+                  {  
+                     "field":"type",
+                     "like":"Microsoft.CognitiveServices/*"
+                  },
+                  {  
+                     "field":"type",
+                     "like":"Microsoft.DocumentDb/*"
+                  },
+                  {  
+                     "field":"type",
+                     "like":"Microsoft.EventGrid/*"
+                  },
+                  {  
+                     "field":"type",
+                     "like":"microsoft.insights/*"
+                  },
+                  {  
+                     "field":"type",
+                     "like":"Microsoft.Logic/*"
+                  },
+                  {  
+                     "field":"type",
+                     "like":"Microsoft.Storage/*"
+                  },
+                  {  
+                     "field":"type",
+                     "like":"Microsoft.Web/*"
+                  }
+
+               ]
+            }
+         },
+         {  
+            "allOf":[
+              {
+                "source": "action",
+                "equals": "Microsoft.Storage/storageAccounts/write"
+              },
+               {  
+                  "field":"type",
+                  "equals":"Microsoft.Storage/storageAccounts"
+               },
+               {  
+                  "not":{  
+                     "field":"Microsoft.Storage/storageAccounts/sku.name",
+                     "in":["StandardLRS"]
+                  }
+               }
+            ]
+         },
+         {  
+            "allof":[  
+               {  
+                  "field":"type",
+                  "equals":"Microsoft.Web/serverfarms"
+               },
+               {  
+                  "not":{  
+                     "field":"Microsoft.Web/serverfarms/sku.name",
+                     "equals":"Y1"
+
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   "then":{  
+      "effect":"deny"
+   }
+}
