@@ -1,0 +1,25 @@
+{
+  "Name": "serverless architecture Custom Role v2",
+  "Id": null,
+  "IsCustom": true,
+  "Description": "Spektra Training Custom Role.",
+  "Actions": [
+    "Microsoft.Authorization/*/read",
+    "Microsoft.Resources/deployments/*",
+    "Microsoft.Resources/subscriptions/resourceGroups/read",
+    "Microsoft.CognitiveServices/accounts/*",
+    "Microsoft.DocumentDb/databaseAccounts/*",
+    "Microsoft.EventGrid/topics/*",
+    "microsoft.insights/alertrules/*",
+    "microsoft.insights/components/*",
+    "Microsoft.Logic/workflows/*",
+    "Microsoft.Storage/storageAccounts/*",
+    "Microsoft.Web/connections/*",
+    "Microsoft.Web/serverFarms/*",
+    "Microsoft.Web/sites/*"
+
+  ],
+  "NotActions": [
+
+  ]
+}
