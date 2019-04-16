@@ -1,59 +1,4 @@
 {
-  "parameters": {
-    "listOfResourceTypesAllowed": {
-      "type": "Array",
-      "metadata": {
-        "description": "The list of resource types that can be deployed.",
-        "displayName": "Allowed resource types",
-        "strongType": "resourceTypes"
-      }
-    },
-    "listOfStorageSKUAllowed": {
-      "type": "Array",
-      "metadata": {
-        "description": "The list of SKUs that can be specified for storage accounts.",
-        "displayName": "Allowed storage sku",
-        "strongType": "storageSKUs"
-      }
-    },
-    "listOfimagePublisherAllowed": {
-      "type": "Array",
-      "metadata": {
-        "description": "The list of Image publishers.",
-        "displayName": "Allowed image publishers"
-      }
-    },
-    "listOfimageOfferAllowed": {
-      "type": "Array",
-      "metadata": {
-        "description": "The list of image offers allowed.",
-        "displayName": "Allowed image offers"
-      }
-    },
-    "listOfimageSkuAllowed": {
-      "type": "Array",
-      "metadata": {
-        "description": "The list of image SKUs",
-        "displayName": "Allowed image sku"
-      }
-    },
-    "listOfvmSkuAllowed": {
-      "type": "Array",
-      "metadata": {
-        "description": "The list of SKUs that can be specified for vms.",
-        "displayName": "Allowed VM sku",
-        "strongType": "vmSKUs"
-      }
-    },
-    "listOfAppServiceSkuAllowed": {
-      "type": "Array",
-      "metadata": {
-        "description": "The list of SKUs that can be specified for app services.",
-        "displayName": "Allowed app service sku"
-      }
-    }
-  },
-  "policyRule": {
     "if": {
       "anyOf": [
         {
@@ -127,4 +72,3 @@
       "effect": "deny"
     }
   }
-}
