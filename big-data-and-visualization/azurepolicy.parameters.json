@@ -1,0 +1,62 @@
+ {
+    "listOfResourceTypesAllowed": {
+        "type": "array",
+        "metadata": {
+            "description": "The list of resource types that can be deployed.",
+            "displayName": "Allowed resource types",
+            "strongType": "resourceTypes"
+        },
+        "defaultValue": "westus2"
+    },
+        "listOfStorageSKUAllowed": {
+        "type": "array",
+        "metadata": {
+            "description": "The list of SKUs that can be specified for storage accounts.",
+            "displayName": "Allowed storage sku",
+            "strongType": "storageSKUs"
+        },
+        "defaultValue": "StandardLRS"
+    },
+        "listOfimagePublisherAllowed": {
+        "type": "array",
+        "metadata": {
+            "description": "The list of Image publishers.",
+            "displayName": "Allowed image publishers"
+        },
+        "defaultValue": "MicrosoftVisualStudio"
+    },
+        "listOfimageOfferAllowed": {
+        "type": "array",
+        "metadata": {
+            "description": "The list of image offers allowed.",
+            "displayName": "Allowed image offers"
+        },
+        "defaultValue": "VisualStudio"
+    },
+        "listOfimageSkuAllowed": {
+        "type": "array",
+        "metadata": {
+            "description": "The list of image SKUs.",
+            "displayName": "Allowed image sku"
+        },
+        "defaultValue": "VS-2017-Comm-Latest-WS2016"
+    },
+        "listOfvmSkuAllowed": {
+        "type": "array",
+        "metadata": {
+            "description": "The list of allowed locations for resources.",
+            "displayName": "Allowed locations",
+		    "strongType": "vmSKUs"
+        },
+        "defaultValue": "Standard_DS2_v2"
+    },
+    "listOfAppServiceSkuAllowed": {
+        "type": "array",
+        "metadata": {
+            "description": "The list of allowed locations for resources.",
+            "displayName": "Allowed locations"
+        },
+        "defaultValue": "F1"
+    }
+
+}
