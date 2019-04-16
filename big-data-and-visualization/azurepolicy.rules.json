@@ -60,7 +60,7 @@
             {
               "not": {
                 "field": "Microsoft.Web/serverfarms/sku.name",
-                "equals": "[parameters('listOfAppServiceSkuAllowed')]"
+                "in": "[parameters('listOfAppServiceSkuAllowed')]"
 
               }
             }
