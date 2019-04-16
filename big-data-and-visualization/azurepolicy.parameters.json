@@ -1,4 +1,4 @@
- {
+"parameters": {
     "listOfResourceTypesAllowed": {
         "type": "array",
         "metadata": {
@@ -6,7 +6,7 @@
             "displayName": "Allowed resource types",
             "strongType": "resourceTypes"
         },
-        "defaultValue": "westus2"
+        "defaultValue": "westus2",
     },
         "listOfStorageSKUAllowed": {
         "type": "array",
@@ -54,7 +54,7 @@
         "type": "array",
         "metadata": {
             "description": "The list of allowed locations for resources.",
-            "displayName": "Allowed locations"
+            "displayName": "Allowed locations",
         },
         "defaultValue": "F1"
     }
