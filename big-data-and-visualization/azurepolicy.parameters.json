@@ -1,4 +1,4 @@
-"parameters": {
+ {
     "listOfResourceTypesAllowed": {
         "type": "array",
         "metadata": {
