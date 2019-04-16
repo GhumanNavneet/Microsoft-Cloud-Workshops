@@ -1,0 +1,132 @@
+{
+  "parameters": {
+    "listOfResourceTypesAllowed": {
+      "type": "Array",
+      "metadata": {
+        "description": "The list of resource types that can be deployed.",
+        "displayName": "Allowed resource types",
+        "strongType": "resourceTypes"
+      }
+    },
+    "listOfStorageSKUAllowed": {
+      "type": "Array",
+      "metadata": {
+        "description": "The list of SKUs that can be specified for storage accounts.",
+        "displayName": "Allowed storage sku",
+        "strongType": "storageSKUs"
+      }
+    },
+    "listOfimagePublisherAllowed": {
+      "type": "Array",
+      "metadata": {
+        "description": "The list of Image publishers.",
+        "displayName": "Allowed image publishers"
+      }
+    },
+    "listOfimageOfferAllowed": {
+      "type": "Array",
+      "metadata": {
+        "description": "The list of image offers allowed.",
+        "displayName": "Allowed image offers"
+      }
+    },
+    "listOfimageSkuAllowed": {
+      "type": "Array",
+      "metadata": {
+        "description": "The list of image SKUs",
+        "displayName": "Allowed image sku"
+      }
+    },
+    "listOfvmSkuAllowed": {
+      "type": "Array",
+      "metadata": {
+        "description": "The list of SKUs that can be specified for vms.",
+        "displayName": "Allowed VM sku",
+        "strongType": "vmSKUs"
+      }
+    },
+    "listOfAppServiceSkuAllowed": {
+      "type": "Array",
+      "metadata": {
+        "description": "The list of SKUs that can be specified for app services.",
+        "displayName": "Allowed app service sku"
+      }
+    }
+  },
+  "policyRule": {
+    "if": {
+      "anyOf": [
+        {
+          "not": {
+            "field": "type",
+            "in": "[parameters('listOfResourceTypesAllowed')]"
+          }
+        },
+        {
+          //Storage Account
+          "allOf": [
+            {
+              "field": "type",
+              "equals": "Microsoft.Storage/storageAccounts"
+            },
+            {
+              "not": {
+                "field": "Microsoft.Storage/storageAccounts/sku.name",
+                "in": "[parameters('listOfStorageSKUAllowed')]"
+              }
+            }
+          ]
+        },
+        {
+          //VMs
+          "allOf": [
+            {
+              "field": "type",
+              "equals": "Microsoft.Compute/virtualMachines"
+            },
+            {
+              "not": {
+                "allOf": [
+                  {
+                    "field": "Microsoft.Compute/virtualMachines/imagePublisher",
+                    "in": "[parameters('listOfimagePublisherAllowed')]"
+                  },
+                  {
+                    "field": "Microsoft.Compute/virtualMachines/imageOffer",
+                    "in": "[parameters('listOfimageOfferAllowed')]"
+                  },
+                  {
+                    "field": "Microsoft.Compute/virtualMachines/imageSku",
+                    "in": "[parameters('listOfimageSkuAllowed')]"
+                  },
+                  {
+                    "field": "Microsoft.Compute/virtualMachines/sku.name",
+                    "in": "[parameters('listOfvmSkuAllowed')]"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "allof": [
+            {
+              "field": "type",
+              "equals": "Microsoft.Web/serverfarms"
+            },
+            {
+              "not": {
+                "field": "Microsoft.Web/serverfarms/sku.name",
+                "equals": "[parameters('listOfAppServiceSkuAllowed')]"
+
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "then": {
+      "effect": "deny"
+    }
+  }
+}
