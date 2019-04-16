@@ -48,7 +48,7 @@
         "type": "array",
         "metadata": {
             "description": "The list of allowed locations for resources.",
-            "displayName": "Allowed locations",
+            "displayName": "Allowed locations"
         }
     }
 
