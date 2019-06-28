@@ -18,4 +18,4 @@
 
 1. In the **Keys** pane, record the values in the **CONNECTION STRING**, **URI** and **PRIMARY KEY** fields. You will use these values later in this lab.
 
-    <img src="images/media/02-keys.jpg"/><br/>
+    <img src="images/02-keys.jpg"/><br/>
