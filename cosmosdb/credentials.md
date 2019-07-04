@@ -6,7 +6,7 @@
  
 1. You will get the values of  **CONNECTION STRING**, **URI** and **PRIMARY KEY** for your **Cosmos DB** account.
 
-    <img src="labcosmos3.jpg"/><br/>
+    <img src="images/labcosmos3.jpg"/><br/>
 
 1. On your local machine, locate the **CosmosLabs** folder in C drive **lab** folder.
 
